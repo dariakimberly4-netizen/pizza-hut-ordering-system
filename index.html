@@ -24,19 +24,16 @@ linear-gradient(180deg,#08090b,#0a0b0d)}
 .heroPizzaGlow{position:absolute;z-index:3;right:3vw;top:47%;width:44vw;height:44vw;max-width:560px;max-height:560px;border-radius:50%;background:radial-gradient(circle,#d719203f 0 28%,#efb43116 48%,transparent 70%);filter:blur(18px);animation:heroGlow 4s ease-in-out infinite alternate}
 @keyframes heroPizzaFloat{to{transform:translateY(-51%) rotate(2deg) scale(1.035)}}
 @keyframes heroGlow{to{transform:scale(1.08);opacity:.72}}
-.heroCopy{position:relative;z-index:5;max-width:760px}.kicker{font-size:11px;letter-spacing:.23em;color:#ff767c;text-transform:uppercase;font-weight:900}.hero h1{font-size:clamp(64px,11vw,155px);line-height:.78;letter-spacing:-.085em;margin:14px 0 22px}.hero h1 span{display:block;color:var(--red)}.hero p{max-width:660px;color:#c5c5ca;line-height:1.7;font-size:17px}.enter{display:inline-flex;margin-top:26px;border:1px solid #ffffff30;border-radius:999px;padding:12px 16px;background:#ffffff08;font-weight:850}
+.heroCopy{position:relative;z-index:5;max-width:720px;padding-bottom:3vh}.kicker{font-size:11px;letter-spacing:.23em;color:#ff767c;text-transform:uppercase;font-weight:900}.hero h1{font-size:clamp(62px,9.8vw,138px);line-height:.8;letter-spacing:-.082em;margin:14px 0 22px;max-width:760px}.hero h1 span{display:block;color:var(--red)}.hero p{max-width:590px;color:#d0d0d4;line-height:1.68;font-size:17px}.heroMeta{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.heroMeta span{border:1px solid #ffffff22;background:#ffffff08;border-radius:999px;padding:8px 10px;font-size:10px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:#d8d8dc}.enter{display:inline-flex;margin-top:18px;border:1px solid #ffffff35;border-radius:999px;padding:12px 16px;background:#ffffff0b;font-weight:900;box-shadow:0 12px 30px #0005}
 .story{height:620vh;position:relative}.stage{position:sticky;top:0;height:100svh;overflow:hidden;background:#090a0c}
 .timelineLine{position:absolute;left:clamp(28px,7vw,110px);top:13%;bottom:13%;width:1px;background:#ffffff1f}.timelineFill{position:absolute;left:0;top:0;width:100%;height:0;background:var(--red);box-shadow:0 0 20px #d7192088}
 .year{position:absolute;left:clamp(50px,9vw,145px);top:13%;font-size:clamp(90px,17vw,260px);font-weight:950;letter-spacing:-.085em;color:#ffffff0a;line-height:.8}
-.scene{position:absolute;inset:0;display:grid;grid-template-columns:.95fr 1.05fr;align-items:center;padding:110px clamp(18px,7vw,110px) 70px;gap:50px}
-.copy{position:relative;z-index:5;padding-left:clamp(36px,5vw,80px)}.copy .label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#ff777d;font-weight:900}.copy h2{font-size:clamp(42px,6vw,82px);line-height:.9;letter-spacing:-.065em;margin:10px 0 18px}.copy p{color:#c0c0c6;line-height:1.72;max-width:610px;font-size:16px}
-.visual{position:relative;min-height:540px;display:grid;place-items:center}.docFrame{width:min(46vw,620px);aspect-ratio:4/3;border:1px solid #ffffff1a;border-radius:30px;position:relative;overflow:hidden;background:
-linear-gradient(135deg,#17181b,#0e0f11);box-shadow:0 45px 100px #000c;transform:rotateY(-8deg) rotateX(2deg);transition:.7s}
+.scene{position:absolute;inset:0;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;padding:110px clamp(18px,7vw,110px) 70px;gap:64px}
+.copy{position:relative;z-index:5;padding-left:clamp(36px,5vw,80px);max-width:700px}.copy .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#ff777d;font-weight:900}.copy h2{font-size:clamp(44px,6.2vw,84px);line-height:.88;letter-spacing:-.066em;margin:11px 0 20px}.copy p{color:#c9c9ce;line-height:1.7;max-width:600px;font-size:16px}.chapterNo{font-size:12px;color:#7f8086;font-weight:900;letter-spacing:.16em;margin-bottom:14px}
+.visual{position:relative;min-height:540px;display:grid;place-items:center}.visual:before{content:"";position:absolute;width:78%;height:78%;border-radius:50%;background:radial-gradient(circle,#d7192027,transparent 68%);filter:blur(24px)}.docFrame{width:min(42vw,560px);aspect-ratio:4/3;border:1px solid #ffffff1a;border-radius:26px;position:relative;overflow:hidden;background:linear-gradient(135deg,#191a1f,#0d0e10);box-shadow:0 45px 100px #000d,0 0 0 1px #ffffff08 inset;transform:rotateY(-8deg) rotateX(2deg);transition:.7s}
 .docFrame.cut{opacity:0;transform:scale(1.1) rotateY(8deg);filter:blur(14px)}
-.archive{position:absolute;inset:0;padding:32px;display:flex;flex-direction:column;justify-content:space-between;background:
-radial-gradient(circle at 78% 22%,#d719202d,transparent 29%),
-linear-gradient(180deg,#17181b,#0a0b0d)}
-.archiveTop{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#aaa}.archiveYear{font-size:clamp(70px,9vw,140px);font-weight:950;letter-spacing:-.08em;line-height:.8;color:#fff}.archiveTitle{font-size:clamp(22px,3vw,38px);font-weight:900;max-width:430px;line-height:1}.archiveGrid{position:absolute;inset:0;opacity:.15;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:44px 44px}
+.archive{position:absolute;inset:0;padding:32px;display:flex;flex-direction:column;justify-content:space-between;background:radial-gradient(circle at 78% 22%,#d719202d,transparent 29%),linear-gradient(180deg,#17181b,#090a0c)}
+.archiveTop{font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:#9d9da3}.archiveYear{font-size:clamp(72px,8.2vw,128px);font-weight:950;letter-spacing:-.08em;line-height:.8;color:#fff}.archiveTitle{font-size:clamp(22px,2.6vw,34px);font-weight:900;max-width:400px;line-height:1.02}.archiveRule{height:1px;background:linear-gradient(90deg,var(--red),transparent);margin:10px 0 16px}.archiveTag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#ff7e83;font-weight:900}.archiveGrid{position:absolute;inset:0;opacity:.15;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:44px 44px}
 .archiveRoof{position:absolute;right:-6%;bottom:7%;width:60%;height:120px;transform:rotate(-7deg)}.archiveRoof:before{content:"";position:absolute;inset:0 0 45px;background:var(--red);border-radius:100% 100% 20% 20%/100% 100% 20% 20%}.archiveRoof:after{content:"";position:absolute;left:12%;right:12%;bottom:40px;height:12px;background:#fff;border-radius:50%}
 .progress{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:grid;gap:10px}.dot{width:9px;height:9px;border-radius:50%;background:#ffffff35}.dot.on{background:var(--red);transform:scale(1.55);box-shadow:0 0 18px #d7192088}
 .values{background:var(--cream);color:#151515;padding:90px clamp(18px,7vw,110px)}.values h2{font-size:clamp(44px,6vw,84px);letter-spacing:-.065em;margin:0 0 18px}.values>p{max-width:720px;color:#6d625d;line-height:1.65}.valueGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}.value{background:#fff;border:1px solid #eadfd2;border-radius:22px;padding:24px}.value b{display:block;font-size:27px;margin-bottom:10px}.value p{margin:0;color:#746963;line-height:1.5;font-size:14px}
@@ -51,7 +48,7 @@ linear-gradient(180deg,#17181b,#0a0b0d)}
 <section class="hero">
  <div class="grain"></div><div class="roofMark"></div><div class="heroPizzaGlow"></div>
  <img class="heroPizza" src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=1200&q=90" alt="Pizza hero">
- <div class="heroCopy"><div class="kicker">Pizza Hut Philippines · Our History</div><h1>ONE SMALL HUT.<span>ONE BIG STORY.</span></h1><p>A redesigned cinematic history experience using the official Pizza Hut Philippines milestones — without food photography dominating the story.</p><a class="enter" href="#story">Enter the story ↓</a></div>
+ <div class="heroCopy"><div class="kicker">Pizza Hut Philippines · Our History</div><h1>ONE SMALL HUT.<span>ONE BIG STORY.</span></h1><p>From a $600 beginning in Wichita to Pizza Hut’s growth in the Philippines, this is the official history reimagined as a cinematic archive.</p><div class="heroMeta"><span>1958 · Wichita</span><span>1984 · Philippines</span><span>1989 · Delivery</span></div><a class="enter" href="#story">Enter the story ↓</a></div>
 </section>
 
 <section class="story" id="story">
@@ -60,8 +57,8 @@ linear-gradient(180deg,#17181b,#0a0b0d)}
   <div class="timelineLine"><div class="timelineFill" id="timelineFill"></div></div>
   <div class="year" id="year">1958</div>
   <div class="scene">
-   <div class="copy"><div class="label" id="label"></div><h2 id="title"></h2><p id="text"></p></div>
-   <div class="visual"><div class="docFrame" id="docFrame"><div class="archive"><div class="archiveGrid"></div><div class="archiveTop">Pizza Hut · Archive Chapter</div><div class="archiveYear" id="archiveYear">1958</div><div class="archiveTitle" id="archiveTitle"></div><div class="archiveRoof"></div></div></div></div>
+   <div class="copy"><div class="chapterNo" id="chapterNo">CHAPTER 01 / 06</div><div class="label" id="label"></div><h2 id="title"></h2><p id="text"></p></div>
+   <div class="visual"><div class="docFrame" id="docFrame"><div class="archive"><div class="archiveGrid"></div><div><div class="archiveTop">Pizza Hut · Archive Chapter</div><div class="archiveRule"></div><div class="archiveTag">Official history milestone</div></div><div class="archiveYear" id="archiveYear">1958</div><div class="archiveTitle" id="archiveTitle"></div><div class="archiveRoof"></div></div></div></div>
   </div>
   <div class="progress" id="progress"></div>
  </div>
@@ -84,7 +81,7 @@ progress.innerHTML=scenes.map((_,i)=>'<span class="dot'+(i===0?' on':'')+'"></sp
 let active=-1;
 function showScene(i){
  if(i===active)return; active=i; docFrame.classList.add('cut');
- setTimeout(()=>{const s=scenes[i];year.textContent=s.year;label.textContent=s.label;title.textContent=s.title;text.textContent=s.text;archiveYear.textContent=s.year;archiveTitle.textContent=s.title;docFrame.classList.remove('cut');document.querySelectorAll('.dot').forEach((d,n)=>d.classList.toggle('on',n===i))},180);
+ setTimeout(()=>{const s=scenes[i];year.textContent=s.year;label.textContent=s.label;title.textContent=s.title;text.textContent=s.text;archiveYear.textContent=s.year;archiveTitle.textContent=s.title;chapterNo.textContent='CHAPTER '+String(i+1).padStart(2,'0')+' / '+String(scenes.length).padStart(2,'0');docFrame.classList.remove('cut');document.querySelectorAll('.dot').forEach((d,n)=>d.classList.toggle('on',n===i))},180);
 }
 function update(){
  const sec=document.getElementById('story'),r=sec.getBoundingClientRect(),total=sec.offsetHeight-innerHeight,passed=Math.min(Math.max(-r.top,0),total),p=total?passed/total:0,i=Math.min(scenes.length-1,Math.floor(p*scenes.length));
