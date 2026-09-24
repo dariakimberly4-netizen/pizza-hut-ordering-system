@@ -1,33 +1,140 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pizza Hut — Make It Yours</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23d71920'/%3E%3Cpath d='M18 23h64L50 82z' fill='%23fff'/%3E%3Cpath d='M28 31h44L50 70z' fill='%23f5b335'/%3E%3C/svg%3E" />
-  <style>
-    :root{--red:#d71920;--deep:#8f1015;--cream:#fff8ef;--ink:#201918;--yellow:#f5b335}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}button{font:inherit;cursor:pointer;border:0}.topbar{background:var(--red);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:15px clamp(18px,5vw,72px);position:sticky;top:0;z-index:10}.brand{font-size:1.45rem;font-weight:900;letter-spacing:-.06em}.brand span{color:var(--yellow)}.nav{display:flex;gap:24px;font-size:.9rem;font-weight:700}.nav a{color:#fff;text-decoration:none}.cart{background:#fff;color:var(--red);border-radius:999px;padding:10px 16px;font-weight:900}.hero{min-height:72vh;background:linear-gradient(110deg,#fff8ef 0%,#fff8ef 52%,#201918 52%,#201918 100%);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;padding:clamp(32px,6vw,92px) clamp(18px,7vw,110px);gap:5vw;overflow:hidden}.eyebrow{color:var(--red);font-weight:900;letter-spacing:.15em;text-transform:uppercase;font-size:.78rem}.hero h1{font-size:clamp(3.3rem,8vw,8.5rem);line-height:.83;letter-spacing:-.09em;margin:18px 0 24px;max-width:700px}.hero h1 em{font-style:normal;color:var(--red)}.hero p{font-size:1.1rem;line-height:1.55;max-width:500px}.cta{background:var(--red);color:#fff;border-radius:999px;padding:16px 24px;font-weight:900;box-shadow:0 10px 22px #d7192030;transition:.2s}.cta:hover{transform:translateY(-3px);background:var(--deep)}.video-card{position:relative;max-width:390px;margin:auto;transform:rotate(3deg);filter:drop-shadow(0 26px 34px #0008)}.video-card video{width:100%;display:block;aspect-ratio:9/20;object-fit:cover;border:10px solid #fff;border-radius:28px;background:#111}.video-label{position:absolute;bottom:22px;left:-26px;background:var(--yellow);color:#301b04;font-weight:900;padding:12px 18px;transform:rotate(-7deg);box-shadow:6px 8px 0 #0004}.section{padding:72px clamp(18px,7vw,110px)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}.section h2{font-size:clamp(2rem,4vw,4rem);letter-spacing:-.07em;margin:0}.section-head p{max-width:360px;line-height:1.5}.builder{background:#201918;color:#fff}.builder-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}.panel{background:#2e2523;border:1px solid #ffffff1c;border-radius:24px;padding:24px}.panel h3{margin-top:0;font-size:1.35rem}.choices{display:flex;flex-wrap:wrap;gap:10px}.choice{background:#493a37;color:#fff;border:1px solid #ffffff22;border-radius:999px;padding:12px 15px}.choice.active{background:var(--yellow);color:#21170d;border-color:var(--yellow);font-weight:900}.pizza-preview{min-height:380px;display:grid;place-items:center;background:radial-gradient(circle,#583d2e,#211918 62%);border-radius:24px;overflow:hidden}.pizza{width:min(70vw,310px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 33% 28%,#f2ca6a 0 3%,transparent 4%),radial-gradient(circle at 69% 65%,#a91e16 0 5%,transparent 6%),radial-gradient(circle at 57% 26%,#a91e16 0 4%,transparent 5%),radial-gradient(circle at 20% 66%,#a91e16 0 4%,transparent 5%),radial-gradient(circle,#e6a33a 0 67%,#f7d483 68% 73%,#c86b23 74% 100%);box-shadow:0 18px 0 #130c0b,0 28px 36px #0008;position:relative;transition:.35s}.pizza:after{content:'🍕';position:absolute;inset:0;display:grid;place-items:center;font-size:4rem;opacity:.55}.summary{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #ffffff24;margin-top:26px;padding-top:20px}.price{font-size:2rem;font-weight:900;color:var(--yellow)}.add{background:var(--red);color:#fff;border-radius:14px;padding:15px 18px;font-weight:900}.menu{background:#fff1df}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 10px 30px #5c2d1b12}.card .art{height:180px;display:grid;place-items:center;font-size:5rem;background:#f5b335}.card:nth-child(2) .art{background:#d71920}.card:nth-child(3) .art{background:#262020}.card-body{padding:20px}.card-body h3{margin:0 0 7px}.card-body p{color:#6c5d57;line-height:1.45;margin:0 0 16px}.small-add{background:#201918;color:#fff;border-radius:999px;padding:10px 15px;font-weight:800}.footer{background:#201918;color:#fff;text-align:center;padding:35px 20px}.modal{position:fixed;inset:0;background:#0009;display:none;place-items:center;z-index:20;padding:20px}.modal.show{display:grid}.receipt{background:#fff8ef;border-radius:24px;max-width:430px;width:100%;padding:30px;color:var(--ink);box-shadow:0 20px 60px #0008}.receipt h2{margin-top:0}.close{float:right;background:transparent;font-size:1.5rem}.receipt-line{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed #c8b7a8}.success{background:#d71920;color:#fff;width:100%;padding:15px;border-radius:12px;font-weight:900;margin-top:20px}
-    @media(max-width:760px){.nav{display:none}.hero{grid-template-columns:1fr;background:var(--cream);padding-top:48px}.hero h1{font-size:clamp(3.4rem,17vw,6rem)}.video-card{max-width:260px;transform:rotate(2deg);margin-top:20px}.builder-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.section{padding-top:52px;padding-bottom:52px}.section-head{display:block}.section-head p{margin-top:14px}.topbar{padding:13px 18px}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Pizza Hut — Motion Ordering Demo</title>
+<style>
+:root{--red:#d71920;--deep:#930b12;--black:#111214;--panel:#1a1b1f;--cream:#fff7ed;--gold:#f4b633;--white:#fff;--muted:#aaaab0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--black);color:#fff;font-family:Inter,Arial,sans-serif;overflow-x:hidden}
+button,input{font:inherit}button{cursor:pointer}
+.topbar{height:66px;position:sticky;top:0;z-index:70;background:rgba(17,18,20,.94);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5vw,70px);border-bottom:1px solid #28292e}
+.brand{display:flex;align-items:center;gap:10px;font-weight:950;font-size:22px;letter-spacing:-.04em}.hat{width:33px;height:22px;background:var(--red);border-radius:60% 60% 35% 35%;transform:rotate(-5deg);position:relative}.hat:after{content:"";position:absolute;left:3px;right:3px;bottom:-5px;height:5px;border-radius:50%;background:#fff}
+.nav{display:flex;gap:22px;align-items:center}.nav a{color:#ddd;text-decoration:none;font-size:13px;font-weight:800}.cartbtn{border:0;border-radius:999px;background:#fff;color:#111;padding:10px 14px;font-weight:900}
+.storybar{position:relative;z-index:30;padding:16px clamp(12px,5vw,70px) 4px;display:flex;gap:14px;overflow:auto;scrollbar-width:none;background:#111214}.storybar::-webkit-scrollbar{display:none}
+.story{flex:0 0 auto;width:76px;text-align:center;color:#d6d6da;background:none;border:0;padding:0}.ring{width:66px;height:66px;border-radius:50%;padding:3px;margin:auto;background:conic-gradient(var(--red),var(--gold),var(--red),#fff,var(--red));position:relative;transition:.25s}.ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid #111214;display:block}.story span{display:block;font-size:10px;margin-top:6px;white-space:nowrap}.story.active .ring{transform:scale(1.08);box-shadow:0 0 0 3px #d7192038,0 0 35px #d7192066}
+.hero{position:relative;min-height:680px;padding:36px clamp(18px,6vw,88px) 70px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;overflow:hidden;background:radial-gradient(circle at 70% 45%,#421214 0 18%,#211316 31%,#111214 62%)}
+.copy{position:relative;z-index:20}.kicker{font-size:11px;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:#ff7479}.copy h1{font-size:clamp(52px,7.6vw,112px);line-height:.85;letter-spacing:-.075em;margin:12px 0 20px;max-width:720px}.copy h1 em{font-style:normal;color:var(--red)}.copy p{max-width:560px;color:#c1c1c6;line-height:1.6;font-size:16px}.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.primary,.ghost{border-radius:999px;padding:14px 19px;font-weight:950}.primary{border:0;background:var(--red);color:#fff}.ghost{border:1px solid #444;background:transparent;color:#fff}
+.stage{position:relative;min-height:500px;display:grid;place-items:center}.plate{position:absolute;width:min(43vw,480px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#292328 0 57%,#111 58% 62%,#2d2d31 63% 67%,transparent 68%);filter:drop-shadow(0 35px 60px #000a)}.heroPizza{position:relative;z-index:8;width:min(37vw,410px);aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 25px 65px #000b;transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .3s}.heroPizza.switching{transform:scale(.72) rotate(-12deg);opacity:.15}.heroLabel{position:absolute;z-index:12;right:2%;bottom:8%;background:#fff;color:#111;padding:13px 16px;border-radius:16px;box-shadow:0 15px 35px #0008;min-width:190px}.heroLabel small{color:#777;font-weight:800}.heroLabel strong{display:block;font-size:20px;margin-top:3px}
+.flyBubble{position:fixed;z-index:100;pointer-events:none;width:66px;height:66px;border-radius:50%;padding:3px;background:conic-gradient(var(--red),var(--gold),var(--red),white,var(--red));opacity:0}.flyBubble img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid #111214}
+.flyBubble.fly{animation:arcFlight 1.05s cubic-bezier(.2,.8,.25,1)}
+@keyframes arcFlight{0%{opacity:1;transform:translate(0,0) scale(1)}45%{opacity:1;transform:translate(var(--mx),var(--my)) scale(1.45)}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(3.8)}}
+.pulse{position:absolute;width:100%;height:100%;border-radius:50%;border:1px solid #d7192070;animation:pulse 2.3s infinite;z-index:2}.pulse.p2{animation-delay:.8s}.pulse.p3{animation-delay:1.6s}@keyframes pulse{0%{transform:scale(.7);opacity:.55}100%{transform:scale(1.35);opacity:0}}
+.section{padding:70px clamp(18px,6vw,88px)}.section.light{background:var(--cream);color:#161616}.section h2{font-size:clamp(34px,5vw,64px);letter-spacing:-.055em;margin:0 0 12px}.lead{max-width:650px;color:#6e625c;line-height:1.55}.filters{display:flex;gap:8px;overflow:auto;padding:20px 0 25px;scrollbar-width:none}.filter{flex:0 0 auto;border:1px solid #ddd;background:#fff;color:#222;border-radius:999px;padding:10px 14px;font-weight:850}.filter.on{background:#161616;color:#fff;border-color:#161616}
+.menuGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:#fff;border:1px solid #e8ddd2;border-radius:22px;overflow:hidden;box-shadow:0 12px 30px #4d28100d}.photo{position:relative;aspect-ratio:1.15;overflow:hidden;background:#eee}.photo img{width:100%;height:100%;object-fit:cover;transition:.5s}.card:hover .photo img{transform:scale(1.06) rotate(.7deg)}.badge{position:absolute;top:12px;left:12px;background:#111;color:white;border-radius:999px;padding:6px 9px;font-size:10px;font-weight:900}.cardbody{padding:16px}.cardbody h3{margin:0 0 7px;font-size:19px}.cardbody p{font-size:13px;color:#776d68;line-height:1.45;min-height:55px}.priceRow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:13px}.price{font-weight:950;font-size:18px}.add{border:0;background:var(--red);color:#fff;border-radius:11px;padding:10px 13px;font-weight:900}
+.motionBand{background:#d71920;overflow:hidden;padding:0}.marquee{display:flex;width:max-content;animation:marq 18s linear infinite}.marquee span{font-size:clamp(44px,7vw,96px);font-weight:950;letter-spacing:-.06em;padding:20px 34px;white-space:nowrap;color:white}.marquee span:nth-child(even){color:#f6b83d}@keyframes marq{to{transform:translateX(-50%)}}
+.cartDrawer{position:fixed;z-index:90;top:0;right:0;width:min(440px,100%);height:100%;background:white;color:#111;transform:translateX(102%);transition:.3s;display:flex;flex-direction:column;box-shadow:-30px 0 80px #0008}.cartDrawer.on{transform:none}.shade{position:fixed;z-index:85;inset:0;background:#0009;opacity:0;pointer-events:none;transition:.3s}.shade.on{opacity:1;pointer-events:auto}.cartHead{padding:20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eee}.cartHead h2{margin:0;font-size:28px}.x{border:0;background:#111;color:#fff;border-radius:50%;width:40px;height:40px}.items{padding:10px 20px;overflow:auto;flex:1}.item{display:grid;grid-template-columns:60px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid #eee}.item img{width:60px;height:60px;border-radius:12px;object-fit:cover}.item h4{margin:0;font-size:14px}.qty{display:flex;gap:7px;align-items:center;margin-top:8px}.qty button{width:26px;height:26px;border:1px solid #ddd;background:#fff;border-radius:8px}.cartFoot{padding:18px 20px 24px;border-top:1px solid #eee}.sum{display:flex;justify-content:space-between;font-size:20px;font-weight:950}.checkout{width:100%;border:0;background:var(--red);color:#fff;border-radius:13px;padding:14px;font-weight:950;margin-top:12px}.empty{padding:50px 10px;text-align:center;color:#777}
+.notice{background:#0d0e10;color:#777;text-align:center;padding:24px 18px;font-size:11px;line-height:1.5}
+@media(max-width:1050px){.menuGrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:800px){.hero{grid-template-columns:1fr;min-height:850px;padding-top:26px}.stage{min-height:420px}.plate{width:min(82vw,460px)}.heroPizza{width:min(70vw,390px)}.heroLabel{right:8%;bottom:3%}.menuGrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.topbar{height:60px}.nav a{display:none}.storybar{padding-left:8px;padding-right:8px}.story{width:65px}.ring{width:58px;height:58px}.hero{min-height:760px;padding:24px 16px 55px}.copy h1{font-size:54px}.copy p{font-size:14px}.stage{min-height:360px}.heroPizza{width:min(76vw,340px)}.plate{width:min(88vw,390px)}.heroLabel{font-size:12px;min-width:160px}.heroLabel strong{font-size:17px}.section{padding:52px 16px}.menuGrid{grid-template-columns:1fr}.card{display:grid;grid-template-columns:116px 1fr}.photo{aspect-ratio:auto;height:100%}.cardbody p{min-height:0}.marquee span{padding-left:18px;padding-right:18px}}
+</style>
 </head>
 <body>
-  <header class="topbar"><div class="brand">PIZZA<span>HUT</span></div><nav class="nav"><a href="#build">Build a pizza</a><a href="#menu">Menu</a><a href="#story">Our story</a></nav><button class="cart" id="cartBtn">Cart <span id="cartCount">0</span></button></header>
-  <main>
-    <section class="hero" id="story"><div><div class="eyebrow">Hot, fresh, and made your way</div><h1>Make your<br><em>moment</em> delicious.</h1><p>Pick your base, pile on your favorites, and create a pizza that feels like yours.</p><button class="cta" onclick="document.querySelector('#build').scrollIntoView()">Build my pizza →</button></div><div class="video-card"><video autoplay muted loop playsinline controls><source src="Record_2026-09-25-04-33-34_1c337646f29875672b5a61192b9010f9.mp4" type="video/mp4"></video><div class="video-label">Fresh out of the oven.</div></div></section>
-    <section class="section builder" id="build"><div class="section-head"><h2>Build it your way.</h2><p>Tap your choices, then add your creation to the cart.</p></div><div class="builder-grid"><div class="panel"><h3>1. Choose your size</h3><div class="choices" data-group="size"><button class="choice active" data-value="Medium" data-price="399">Medium</button><button class="choice" data-value="Large" data-price="499">Large</button><button class="choice" data-value="Family" data-price="699">Family</button></div><h3>2. Choose your crust</h3><div class="choices" data-group="crust"><button class="choice active" data-value="Classic crust">Classic</button><button class="choice" data-value="Cheesy crust">Cheesy crust +₱60</button><button class="choice" data-value="Thin crust">Thin crust</button></div><h3>3. Add toppings</h3><div class="choices" data-group="toppings"><button class="choice" data-value="Pepperoni">Pepperoni</button><button class="choice" data-value="Mushrooms">Mushrooms</button><button class="choice" data-value="Bell peppers">Bell peppers</button><button class="choice" data-value="Ham">Ham</button><button class="choice" data-value="Extra cheese">Extra cheese</button></div><div class="summary"><div><small>Your total</small><div class="price" id="price">₱399</div></div><button class="add" id="addPizza">Add to cart</button></div></div><div class="pizza-preview"><div class="pizza" id="pizza"></div></div></div></section>
-    <section class="section menu" id="menu"><div class="section-head"><h2>Good things to share.</h2><p>Quick picks for movie nights, family tables, and “just because” moments.</p></div><div class="cards"><article class="card"><div class="art">🍕</div><div class="card-body"><h3>Supreme Feast</h3><p>Pepperoni, ham, mushrooms, onions, and bell peppers.</p><button class="small-add" data-quick="Supreme Feast" data-quick-price="599">Add · ₱599</button></div></article><article class="card"><div class="art">🍗</div><div class="card-body"><h3>Chicken Wings</h3><p>Crispy, saucy, and ready for the table.</p><button class="small-add" data-quick="Chicken Wings" data-quick-price="299">Add · ₱299</button></div></article><article class="card"><div class="art">🥤</div><div class="card-body"><h3>Family Bundle</h3><p>One large pizza, wings, and drinks for sharing.</p><button class="small-add" data-quick="Family Bundle" data-quick-price="899">Add · ₱899</button></div></article></div></section>
-  </main><footer class="footer">Pizza Hut · Made for good moments</footer>
-  <div class="modal" id="modal"><div class="receipt"><button class="close" id="close">×</button><h2>Your order</h2><div id="receiptItems"></div><div class="receipt-line"><strong>Total</strong><strong id="receiptTotal">₱0</strong></div><button class="success" id="place">Place order</button></div></div>
-  <script>
-    const cart=[];const price=document.querySelector('#price');const count=document.querySelector('#cartCount');const pizza=document.querySelector('#pizza');
-    function update(){let base=Number(document.querySelector('[data-group=size] .active').dataset.price),crust=document.querySelector('[data-group=crust] .active').textContent.includes('Cheesy')?60:0,tops=document.querySelectorAll('[data-group=toppings] .active').length*25;price.textContent='₱'+(base+crust+tops);pizza.style.transform='rotate('+(cart.length*4)+'deg)'}
-    document.querySelectorAll('.choices').forEach(group=>group.addEventListener('click',e=>{if(!e.target.matches('.choice'))return;if(group.dataset.group!=='toppings')group.querySelectorAll('.choice').forEach(b=>b.classList.remove('active'));e.target.classList.toggle('active');update()}));
-    document.querySelector('#addPizza').onclick=()=>{cart.push({name:'My custom pizza',price:Number(price.textContent.slice(1))});updateCart();alert('Your custom pizza was added!')};
-    document.querySelectorAll('[data-quick]').forEach(b=>b.onclick=()=>{cart.push({name:b.dataset.quick,price:Number(b.dataset.quickPrice)});updateCart();b.textContent='Added ✓'});
-    function updateCart(){count.textContent=cart.length}
-    function openCart(){const list=document.querySelector('#receiptItems');list.innerHTML=cart.length?cart.map(x=>`<div class="receipt-line"><span>${x.name}</span><span>₱${x.price}</span></div>`).join(''):'<p>Your cart is empty.</p>';document.querySelector('#receiptTotal').textContent='₱'+cart.reduce((a,x)=>a+x.price,0);document.querySelector('#modal').classList.add('show')}
-    document.querySelector('#cartBtn').onclick=openCart;document.querySelector('#close').onclick=()=>document.querySelector('#modal').classList.remove('show');document.querySelector('#place').onclick=()=>{if(!cart.length)return alert('Add something delicious first.');alert('Order received! This demo is ready for your real checkout connection.');cart.length=0;updateCart();document.querySelector('#modal').classList.remove('show')};update();
-  </script>
+<header class="topbar">
+ <div class="brand"><span class="hat"></span>Pizza Hut</div>
+ <nav class="nav"><a href="#menu">Menu</a><a href="#deals">Deals</a><button class="cartbtn" onclick="openCart()">Cart · <span id="cartCount">0</span></button></nav>
+</header>
+
+<div class="storybar" id="storybar"></div>
+
+<section class="hero">
+ <div class="copy">
+  <div class="kicker">Pizza in motion</div>
+  <h1>YOUR CRAVING<br><em>COMES ALIVE.</em></h1>
+  <p>Inspired by the motion in your reference video: circular food choices leave the top rail, travel into the page, enlarge, and become the featured product. Tap any circle above to trigger the motion yourself.</p>
+  <div class="cta-row"><button class="primary" onclick="document.getElementById('menu').scrollIntoView()">Order from menu</button><button class="ghost" onclick="nextFeature()">Play next motion</button></div>
+ </div>
+ <div class="stage" id="stage">
+   <div class="pulse"></div><div class="pulse p2"></div><div class="pulse p3"></div>
+   <div class="plate"></div>
+   <img class="heroPizza" id="heroPizza" alt="Featured food">
+   <div class="heroLabel"><small id="heroCat">Featured</small><strong id="heroName">Pepperoni Supreme</strong></div>
+ </div>
+</section>
+
+<section class="motionBand"><div class="marquee"><span>MAKE IT YOURS</span><span>HOT • FRESH • FAST</span><span>MAKE IT YOURS</span><span>HOT • FRESH • FAST</span><span>MAKE IT YOURS</span><span>HOT • FRESH • FAST</span><span>MAKE IT YOURS</span><span>HOT • FRESH • FAST</span></div></section>
+
+<section class="section light" id="menu">
+ <h2>Pick your favorite.</h2>
+ <p class="lead">Every menu card is functional. Add items to your cart, change quantities, and keep the motion-led experience without turning the site into a game.</p>
+ <div class="filters" id="filters"></div>
+ <div class="menuGrid" id="menuGrid"></div>
+</section>
+
+<div class="shade" id="shade" onclick="closeCart()"></div>
+<aside class="cartDrawer" id="drawer">
+ <div class="cartHead"><h2>Your order</h2><button class="x" onclick="closeCart()">×</button></div>
+ <div class="items" id="items"></div>
+ <div class="cartFoot"><div class="sum"><span>Total</span><span id="total">₱0</span></div><button class="checkout" onclick="demoCheckout()">Continue to checkout</button></div>
+</aside>
+<div class="flyBubble" id="flyBubble"><img id="flyImg" alt=""></div>
+<footer class="notice">Concept ordering demo inspired by the uploaded motion reference. It is not connected to Pizza Hut stores, live inventory, official pricing, or real payment processing.</footer>
+
+<script>
+const products=[
+{id:'p1',name:'Pepperoni Supreme',cat:'Pizza',price:499,img:'https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=1000&q=85',desc:'Pepperoni, mozzarella and tomato sauce.'},
+{id:'p2',name:'Super Supreme',cat:'Pizza',price:599,img:'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1000&q=85',desc:'A loaded supreme-style favorite for sharing.'},
+{id:'p3',name:'Cheese Lovers',cat:'Pizza',price:479,img:'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1000&q=85',desc:'A rich cheese-focused classic.'},
+{id:'p4',name:'Hawaiian Supreme',cat:'Pizza',price:519,img:'https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1000&q=85',desc:'Sweet-and-savory pineapple and ham-style combination.'},
+{id:'d1',name:'Family Bundle',cat:'Deals',price:899,img:'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=1000&q=85',desc:'Pizza, sides and drinks built for sharing.'},
+{id:'c1',name:'Chicken Wings',cat:'Chicken',price:299,img:'https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=1000&q=85',desc:'Crispy wings with a saucy finish.'},
+{id:'pa1',name:'Creamy Pasta',cat:'Pasta',price:249,img:'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=1000&q=85',desc:'Creamy comfort pasta for your order.'},
+{id:'s1',name:'Garlic Bread',cat:'Sides',price:149,img:'https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?auto=format&fit=crop&w=1000&q=85',desc:'Toasted garlic bread for dipping and sharing.'},
+{id:'dr1',name:'Soft Drink',cat:'Drinks',price:89,img:'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=1000&q=85',desc:'A chilled drink for the meal.'}
+];
+const featured=products.slice(0,5);
+let featureIndex=0,activeCat='All',cart=JSON.parse(localStorage.getItem('motionPizzaCart')||'[]'),timer;
+const money=n=>'₱'+n.toLocaleString('en-PH');
+
+function buildStories(){
+ const bar=document.getElementById('storybar');
+ bar.innerHTML=featured.map((p,i)=>`<button class="story ${i===0?'active':''}" id="story-${i}" onclick="selectFeature(${i},this)"><div class="ring"><img src="${p.img}" alt="${p.name}"></div><span>${p.name.split(' ')[0]}</span></button>`).join('');
+}
+function setHero(i){
+ const p=featured[i],img=document.getElementById('heroPizza');
+ img.classList.add('switching');
+ setTimeout(()=>{img.src=p.img;document.getElementById('heroName').textContent=p.name;document.getElementById('heroCat').textContent=p.cat+' · '+money(p.price);img.onload=()=>img.classList.remove('switching')},220);
+ document.querySelectorAll('.story').forEach((s,n)=>s.classList.toggle('active',n===i));
+}
+function animateFrom(el,i){
+ const ring=el.querySelector('.ring'),r=ring.getBoundingClientRect(),stage=document.getElementById('stage').getBoundingClientRect();
+ const f=document.getElementById('flyBubble'),fi=document.getElementById('flyImg');
+ fi.src=featured[i].img;f.style.left=r.left+'px';f.style.top=r.top+'px';
+ const tx=stage.left+stage.width/2-r.left-33,ty=stage.top+stage.height/2-r.top-33;
+ f.style.setProperty('--tx',tx+'px');f.style.setProperty('--ty',ty+'px');
+ f.style.setProperty('--mx',(tx*.48)+'px');f.style.setProperty('--my',(ty*.18-75)+'px');
+ f.classList.remove('fly');void f.offsetWidth;f.classList.add('fly');
+ setTimeout(()=>setHero(i),650);
+}
+function selectFeature(i,el){featureIndex=i;animateFrom(el,i);restartAuto()}
+function nextFeature(){featureIndex=(featureIndex+1)%featured.length;const el=document.getElementById('story-'+featureIndex);animateFrom(el,featureIndex);restartAuto()}
+function restartAuto(){clearInterval(timer);timer=setInterval(nextFeature,4200)}
+
+const cats=['All','Pizza','Deals','Chicken','Pasta','Sides','Drinks'];
+function renderFilters(){document.getElementById('filters').innerHTML=cats.map(c=>`<button class="filter ${c===activeCat?'on':''}" onclick="filterTo('${c}')">${c}</button>`).join('')}
+function filterTo(c){activeCat=c;renderFilters();renderMenu()}
+function renderMenu(){
+ const list=products.filter(p=>activeCat==='All'||p.cat===activeCat);
+ document.getElementById('menuGrid').innerHTML=list.map(p=>`<article class="card"><div class="photo"><img src="${p.img}" alt="${p.name}"><span class="badge">${p.cat}</span></div><div class="cardbody"><h3>${p.name}</h3><p>${p.desc}</p><div class="priceRow"><span class="price">${money(p.price)}</span><button class="add" onclick="addCart('${p.id}')">Add</button></div></div></article>`).join('');
+}
+function addCart(id){
+ const p=products.find(x=>x.id===id),same=cart.find(x=>x.id===id);
+ if(same)same.qty++;else cart.push({...p,qty:1});
+ saveCart();openCart();
+}
+function saveCart(){localStorage.setItem('motionPizzaCart',JSON.stringify(cart));renderCart()}
+function renderCart(){
+ const count=cart.reduce((a,b)=>a+b.qty,0),total=cart.reduce((a,b)=>a+b.qty*b.price,0);
+ document.getElementById('cartCount').textContent=count;document.getElementById('total').textContent=money(total);
+ document.getElementById('items').innerHTML=cart.length?cart.map((x,i)=>`<div class="item"><img src="${x.img}"><div><h4>${x.name}</h4><div style="font-size:12px;color:#777;margin-top:3px">${money(x.price*x.qty)}</div><div class="qty"><button onclick="qty(${i},-1)">−</button><b>${x.qty}</b><button onclick="qty(${i},1)">+</button><button onclick="removeItem(${i})" style="width:auto;padding:0 8px">Remove</button></div></div></div>`).join(''):'<div class="empty"><b>Your cart is empty.</b><br><br>Tap Add on any menu item.</div>';
+}
+function qty(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);saveCart()}
+function removeItem(i){cart.splice(i,1);saveCart()}
+function openCart(){document.getElementById('drawer').classList.add('on');document.getElementById('shade').classList.add('on')}
+function closeCart(){document.getElementById('drawer').classList.remove('on');document.getElementById('shade').classList.remove('on')}
+function demoCheckout(){if(!cart.length)return alert('Add an item first.');alert('Demo checkout: no real order or payment is sent.');}
+buildStories();document.getElementById('heroPizza').src=featured[0].img;document.getElementById('heroName').textContent=featured[0].name;document.getElementById('heroCat').textContent=featured[0].cat+' · '+money(featured[0].price);renderFilters();renderMenu();renderCart();restartAuto();
+</script>
 </body>
 </html>
