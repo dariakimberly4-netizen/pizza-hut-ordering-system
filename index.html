@@ -37,6 +37,10 @@ radial-gradient(circle at 20% 20%,#f1b53213,transparent 31%);transition:backgrou
 @keyframes lightmove{50%,100%{transform:translateX(40%)}}
 .yearGhost{position:absolute;left:clamp(12px,5vw,70px);top:70px;font-size:clamp(110px,20vw,310px);font-weight:950;letter-spacing:-.09em;color:#ffffff08;line-height:.8;transition:.5s}
 .centerVisual{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:min(62vw,850px);aspect-ratio:16/10;perspective:1200px}
+.movingPizza{position:absolute;z-index:12;width:min(24vw,290px);aspect-ratio:1;border-radius:50%;overflow:hidden;left:72%;top:15%;transform:translate(-50%,-50%) scale(.55) rotate(-18deg);filter:drop-shadow(0 28px 42px #000b);will-change:transform,left,top,opacity}
+.movingPizza img{width:100%;height:100%;object-fit:cover;display:block}
+.movingPizza:after{content:"";position:absolute;inset:-8%;border-radius:50%;box-shadow:0 0 0 14px #d7192018,0 0 80px #d7192066;pointer-events:none}
+.motionTrail{position:absolute;z-index:8;width:42vw;height:18vw;left:50%;top:42%;transform:translate(-50%,-50%) rotate(-16deg);background:linear-gradient(90deg,transparent,#d7192020,#f1b53218,transparent);filter:blur(26px);opacity:.65;pointer-events:none}
 .imageFrame{position:absolute;inset:0;border-radius:34px;overflow:hidden;box-shadow:0 50px 120px #000c;border:1px solid #ffffff16;transform:rotateY(-9deg) rotateX(3deg) scale(.94);transition:.75s cubic-bezier(.2,.8,.2,1)}
 .imageFrame img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.07) brightness(.8);transition:1s}
 .imageFrame:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,#000c 100%)}
@@ -55,7 +59,7 @@ radial-gradient(circle at 20% 20%,#f1b53213,transparent 31%);transition:backgrou
 .valueGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}.value{background:#fff;border:1px solid #eadfd2;border-radius:22px;padding:24px}.value b{font-size:27px;display:block;margin-bottom:10px}.value p{color:#766b66;line-height:1.5;margin:0;font-size:14px}
 .outro{min-height:90svh;display:grid;place-items:center;text-align:center;padding:80px 18px;background:radial-gradient(circle,#5b1116 0,transparent 34%),#08090b}
 .outro h2{font-size:clamp(52px,8vw,118px);line-height:.82;letter-spacing:-.075em;margin:0 0 22px}.outro p{max-width:700px;margin:auto;color:#bdbdc2;line-height:1.7}.source{margin-top:26px;color:#777;font-size:12px}
-@media(max-width:820px){
+@media(max-width:820px){.movingPizza{width:min(38vw,230px)}
  header nav a:not(:last-child){display:none}
  .roof{width:300px;right:-130px;bottom:-40px}
  .centerVisual{width:86vw;top:46%}
@@ -99,6 +103,8 @@ radial-gradient(circle at 20% 20%,#f1b53213,transparent 31%);transition:backgrou
   <div class="backdrop" id="backdrop"></div><div class="light"></div><div class="grain"></div>
   <div class="yearGhost" id="yearGhost">1958</div>
   <div class="filmstrip" id="filmstrip"></div>
+  <div class="motionTrail" id="motionTrail"></div>
+  <div class="movingPizza" id="movingPizza"><img id="movingPizzaImg" src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=1000&q=88" alt="Moving pizza"></div>
   <div class="centerVisual"><div class="imageFrame" id="imageFrame"><img id="sceneImg" alt=""></div></div>
   <div class="copy"><div class="label" id="sceneLabel"></div><h2 id="sceneTitle"></h2><p id="sceneText"></p></div>
   <div class="progress" id="progress"></div>
@@ -151,6 +157,26 @@ function showScene(i){
 function update(){
  const sec=document.getElementById('story'),r=sec.getBoundingClientRect(),total=sec.offsetHeight-innerHeight,passed=Math.min(Math.max(-r.top,0),total),p=total?passed/total:0,i=Math.min(scenes.length-1,Math.floor(p*scenes.length));
  showScene(i);
+
+ const mp=document.getElementById('movingPizza');
+ const trail=document.getElementById('motionTrail');
+ const x=78-(p*58);
+ const y=16+(p*58);
+ const scale=.58+(Math.sin(p*Math.PI)*.72);
+ const rot=-24+(p*540);
+ mp.style.left=x+'%';
+ mp.style.top=y+'%';
+ mp.style.opacity=(p<.02||p>.985)?'.18':'1';
+ mp.style.transform='translate(-50%,-50%) scale('+scale+') rotate('+rot+'deg)';
+ trail.style.transform='translate(-50%,-50%) rotate('+(-18+p*28)+'deg) scale('+(1+p*.35)+')';
+ trail.style.opacity=String(.35+Math.sin(p*Math.PI)*.45);
+
+ const segment=Math.min(scenes.length-1,Math.floor(p*scenes.length));
+ const local=(p*scenes.length)-segment;
+ if(local<.08){
+   const img=document.getElementById('movingPizzaImg');
+   if(img.dataset.scene!=segment){img.dataset.scene=segment;img.src=scenes[segment].img}
+ }
 }
 addEventListener('scroll',update,{passive:true});addEventListener('resize',update);showScene(0);update();
 </script>
