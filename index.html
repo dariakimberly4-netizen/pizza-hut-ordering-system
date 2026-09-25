@@ -127,6 +127,50 @@ linear-gradient(90deg,#090a0c 0%,#0b0c0f 55%,#08090b 100%)}
  }
 }
 
+
+/* ALT DESIGN: CINEMATIC EDITORIAL ARCHIVE — motion code intentionally untouched */
+body{background:#070707;font-family:Arial,Helvetica,sans-serif}
+header{height:76px;background:#070707e8;border-bottom:1px solid #2a2a2a;backdrop-filter:blur(14px)}
+.brand{font-size:20px;text-transform:uppercase;letter-spacing:.06em}.hat{width:31px;height:19px}
+nav{font-size:10px;letter-spacing:.16em;gap:30px}
+.hero{background:#070707;align-items:center;padding:110px clamp(20px,7vw,108px) 64px}
+.hero:after{bottom:32px;background:linear-gradient(90deg,#d71920 0 8%,#333 8% 100%)}
+.heroCopy{max-width:760px;margin-top:82px}
+.kicker{color:#ff4c53;font-size:10px;letter-spacing:.38em}
+.hero h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(68px,10vw,145px);line-height:.77;letter-spacing:-.075em;margin:18px 0 30px}
+.hero h1 span{font-family:Arial,Helvetica,sans-serif;font-weight:950;font-size:.73em;letter-spacing:-.07em}
+.hero p{border-left:2px solid var(--red);padding-left:18px;max-width:520px;color:#b7b7ba}
+.heroMeta span{border:0;border-bottom:1px solid #444;border-radius:0;background:none;padding:8px 2px;margin-right:16px}
+.enter{background:transparent;border:1px solid #eee;border-radius:0;text-transform:uppercase;letter-spacing:.14em;font-size:10px}
+.roofMark{right:-15vw;top:8vh;opacity:.08;transform:rotate(-12deg) scale(1.25)}
+.heroPizzaGlow{opacity:.45}
+.motionCue{display:none}
+.story{background:#e9e2d8}
+.stage{background:#e9e2d8;color:#111}
+.timelineLine{background:#b9afa4}.timelineFill{background:#d71920}
+.year{color:#1111110a}
+.copy .label{color:#c6171e}.chapterNo{color:#877d73}.copy h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.055em}.copy p{color:#504a45}
+.visual:before{background:radial-gradient(circle,#d7192012,transparent 70%)}
+.docFrame{border:1px solid #cfc5b9;background:#f6f1e9;box-shadow:25px 35px 65px #766b5c42}
+.archive{color:#fff;background:linear-gradient(150deg,#1b1a19,#080808 68%)}
+.archiveGrid{opacity:.05}.dot{background:#80766d}.dot.on{background:#d71920}
+.values{background:#0b0b0c;color:#fff;border-top:1px solid #292929}
+.values>p{color:#999}.valueGrid{background:#2b2b2b;border-color:#2b2b2b}
+.value{background:#101011;color:#fff}.value p{color:#9d9d9f}.value b{font-family:Georgia,'Times New Roman',serif;font-weight:400}
+.outro{background:#d71920;color:#fff}.outro h2{font-family:Georgia,'Times New Roman',serif;font-weight:400}.outro p,.source{color:#ffe5e5}
+@media(max-width:850px){
+ .heroCopy{max-width:78%}
+ .hero h1{font-size:clamp(56px,13vw,88px)}
+ .story{background:#e9e2d8}.scene{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+ header{height:60px}.hero{padding:88px 18px 48px}.heroCopy{max-width:100%;margin-top:128px}
+ .hero h1{font-size:59px}.hero p{max-width:78%;font-size:13px}
+ .heroMeta{max-width:78%}.heroMeta span{font-size:8px}
+ .copy h2{font-size:38px}.copy p{color:#57514c}
+ .valueGrid{grid-template-columns:1fr}.value{padding:24px}
+}
+
 </style>
 </head>
 <body>
