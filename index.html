@@ -40,13 +40,81 @@ linear-gradient(180deg,#08090b,#0a0b0d)}
 .outro{min-height:85svh;display:grid;place-items:center;text-align:center;padding:80px 18px;background:radial-gradient(circle,#5a1116 0,transparent 34%),#08090b}.outro h2{font-size:clamp(52px,8vw,112px);line-height:.83;letter-spacing:-.075em;margin:0 0 22px}.outro p{max-width:680px;margin:auto;color:#bdbdc2;line-height:1.7}.source{margin-top:25px;font-size:12px;color:#777}
 @media(max-width:850px){nav a:not(:last-child){display:none}.roofMark{width:430px;right:-210px;top:10vh}.heroPizza{width:min(56vw,360px);right:-8vw;top:34%;opacity:.9}.heroPizzaGlow{right:-18vw;top:34%;width:70vw;height:70vw}.heroCopy{max-width:78%}.scene{grid-template-columns:1fr;padding:110px 16px 50px}.visual{order:-1;min-height:340px}.docFrame{width:min(88vw,620px)}.copy{padding-left:34px}.year{top:87px;left:36px;font-size:105px}.timelineLine{left:18px;top:12%;bottom:10%}.progress{right:9px}.valueGrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.heroPizza{width:54vw;right:-16vw;top:28%;opacity:.82}.heroPizzaGlow{right:-24vw;top:29%;width:78vw;height:78vw}.heroCopy{max-width:100%;padding-top:18vh}.hero h1{font-size:61px}.hero p{font-size:15px}.story{height:660vh}.visual{min-height:305px}.docFrame{border-radius:22px}.copy h2{font-size:38px}.copy p{font-size:14px;line-height:1.58}.archive{padding:24px}.archiveYear{font-size:78px}.valueGrid{grid-template-columns:1fr}.values{padding:64px 16px}}
+
+.storyMotion{
+ position:absolute;z-index:20;left:clamp(16px,5vw,70px);right:clamp(16px,5vw,70px);top:82px;
+ height:94px;overflow:visible;pointer-events:none;
+}
+.storyTrack{
+ position:absolute;left:0;top:0;height:78px;display:flex;gap:14px;align-items:flex-start;
+ transform:translateX(0);will-change:transform;
+}
+.storyBubble{
+ width:64px;flex:0 0 64px;text-align:center;color:#fff;
+ transform:translateY(0) scale(1);opacity:1;will-change:transform,opacity;
+}
+.storyRing{
+ width:58px;height:58px;border-radius:50%;padding:3px;margin:auto;
+ background:conic-gradient(var(--red),var(--gold),var(--red),#fff,var(--red));
+ box-shadow:0 5px 16px #0008;
+}
+.storyRing img{
+ width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid #0b0c0e;display:block
+}
+.storyBubble small{display:block;margin-top:5px;font-size:9px;white-space:nowrap;opacity:.78}
+.storyBubble.drop{
+ animation:storyDrop 1.05s cubic-bezier(.18,.74,.2,1) forwards;
+ z-index:5;
+}
+.storyTrack.slideLeft{
+ animation:trackSlide .78s cubic-bezier(.2,.8,.2,1) forwards;
+}
+.storyTrack.exitLeft{
+ animation:trackExit .95s cubic-bezier(.2,.75,.2,1) forwards;
+}
+.storyTrack.enterRight{
+ animation:trackEnter .95s cubic-bezier(.18,.78,.2,1) forwards;
+}
+@keyframes storyDrop{
+ 0%{transform:translateY(0) scale(1) rotate(0);opacity:1}
+ 28%{transform:translateY(15px) scale(1.04) rotate(4deg);opacity:1}
+ 65%{transform:translateY(118px) scale(1.2) rotate(-6deg);opacity:1}
+ 100%{transform:translateY(245px) scale(1.5) rotate(10deg);opacity:0}
+}
+@keyframes trackSlide{
+ from{transform:translateX(0)}
+ to{transform:translateX(-78px)}
+}
+@keyframes trackExit{
+ from{transform:translateX(-78px);opacity:1}
+ to{transform:translateX(-430px);opacity:0}
+}
+@keyframes trackEnter{
+ from{transform:translateX(calc(100vw - 120px));opacity:0}
+ to{transform:translateX(0);opacity:1}
+}
+@media(max-width:520px){
+ .storyMotion{top:68px;left:12px;right:8px;height:84px}
+ .storyBubble{width:58px;flex-basis:58px}.storyRing{width:52px;height:52px}
+ .storyBubble small{font-size:8px}
+ @keyframes storyDrop{
+  0%{transform:translateY(0) scale(1) rotate(0);opacity:1}
+  32%{transform:translateY(14px) scale(1.04) rotate(4deg);opacity:1}
+  68%{transform:translateY(98px) scale(1.18) rotate(-6deg);opacity:1}
+  100%{transform:translateY(205px) scale(1.45) rotate(10deg);opacity:0}
+ }
+}
+
 </style>
 </head>
 <body>
 <header><div class="brand"><span class="hat"></span>Pizza Hut</div><nav><a href="#story">Our History</a><a href="#values">Values</a><a href="https://www.pizzahut.com.ph/our-history" target="_blank" rel="noopener">Official Story ↗</a></nav></header>
 
 <section class="hero">
- <div class="grain"></div><div class="roofMark"></div><div class="heroPizzaGlow"></div>
+ <div class="grain"></div>
+ <div class="storyMotion" id="storyMotion">
+  <div class="storyTrack" id="storyTrack"></div>
+ </div><div class="roofMark"></div><div class="heroPizzaGlow"></div>
  <img class="heroPizza" src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=1200&q=90" alt="Pizza hero">
  <div class="heroCopy"><div class="kicker">Pizza Hut Philippines · Our History</div><h1>ONE SMALL HUT.<span>ONE BIG STORY.</span></h1><p>From a $600 beginning in Wichita to Pizza Hut’s growth in the Philippines, this is the official history reimagined as a cinematic archive.</p><div class="heroMeta"><span>1958 · Wichita</span><span>1984 · Philippines</span><span>1989 · Delivery</span></div><a class="enter" href="#story">Enter the story ↓</a></div>
 </section>
@@ -88,6 +156,45 @@ function update(){
  timelineFill.style.height=(p*100)+'%'; showScene(i);
 }
 addEventListener('scroll',update,{passive:true});addEventListener('resize',update);showScene(0);update();
+
+const storySets=[
+ [
+  {n:'Pepperoni',i:'https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=300&q=80'},
+  {n:'Supreme',i:'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=300&q=80'},
+  {n:'Cheese',i:'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=300&q=80'}
+ ],
+ [
+  {n:'Hawaiian',i:'https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=300&q=80'},
+  {n:'Pan Pizza',i:'https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=300&q=80'},
+  {n:'Classic',i:'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=300&q=80'}
+ ]
+];
+let storySetIndex=0,storyTimer;
+function renderStorySet(enter=false){
+ const track=document.getElementById('storyTrack');
+ const set=storySets[storySetIndex];
+ track.className='storyTrack'+(enter?' enterRight':'');
+ track.innerHTML=set.map((x,i)=>'<div class="storyBubble" data-i="'+i+'"><div class="storyRing"><img src="'+x.i+'" alt=""></div><small>'+x.n+'</small></div>').join('');
+ if(enter)setTimeout(()=>track.classList.remove('enterRight'),980);
+}
+function runStoryMotion(){
+ clearTimeout(storyTimer);
+ const track=document.getElementById('storyTrack');
+ const bubbles=[...track.querySelectorAll('.storyBubble')];
+ if(!bubbles.length)return;
+ const dropIndex=Math.min(1,bubbles.length-1);
+ bubbles[dropIndex].classList.add('drop');
+ setTimeout(()=>track.classList.add('slideLeft'),140);
+ setTimeout(()=>track.classList.add('exitLeft'),1650);
+ setTimeout(()=>{
+   storySetIndex=(storySetIndex+1)%storySets.length;
+   renderStorySet(true);
+ },2500);
+ storyTimer=setTimeout(runStoryMotion,4200);
+}
+renderStorySet(false);
+storyTimer=setTimeout(runStoryMotion,900);
+
 </script>
 </body>
 </html>
